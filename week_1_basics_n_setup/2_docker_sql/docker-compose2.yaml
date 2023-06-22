@@ -17,12 +17,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - "./persist_pgadmin:/var/lib/pgadmin"
- 
-volumes:
-  persist_pgadmin:
-  ny_taxi_postgres_data:
-
-
-
+      - "./ny_taxi_postgres_data:/var/lib/postgresql/data:rw"
+  volumes:
+      - "./ny_taxi_postgres_data:/var/lib/postgresql/data:rw"
 

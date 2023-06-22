@@ -4,6 +4,6 @@ RUN apt-get install wget
 RUN pip install pandas sqlalchemy psycopg2
 
 WORKDIR /app
-COPY ingest_data.py ingest_data.py 
+COPY Python_dockerised_script_Taxi_Ingest.py Python_dockerised_script_Taxi_Ingest.py 
 
-ENTRYPOINT [ "python", "ingest_data.py" ]
+ENTRYPOINT [ "python", "Python_dockerised_script_Taxi_Ingest.py" ]
