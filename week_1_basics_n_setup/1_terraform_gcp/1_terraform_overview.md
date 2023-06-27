@@ -21,6 +21,21 @@
    * Very useful for stack-based deployments, and with cloud providers such as AWS, GCP, Azure, K8S…
    * State-based approach to track resource changes throughout deployments
 
+#### Notes from Nana's Intro to Terraform
+
+Automates, provisions and manages infrastructure.
+
+Infrastructure as Code 
+
+#### Terraform has 2 main components.
+* `.tfstate` file is a json file which contains a description of infra as it is now. All changes are compared to it. Do not edit manually!
+* `apply` command creates the state file. When working with others everyone should use the same state file. It needs to be stored somewhere like GCP, AWS where others can access it
+
+Uses declarative language - you define the end state for your infrastructure and Terraform figures out what is required to achieve that. 
+This is particulary useful when updating your infrastructure
+
+
+Git version control but for infrastructure.
 
 #### Files
 
@@ -42,7 +57,9 @@
   * blocks to define components of your infrastructure
   * Project modules/resources: google_storage_bucket, google_bigquery_dataset, google_bigquery_table
 * `variable` & `locals`
+  * everything that starts with `var` is a variable contained within `variables.tf` file
   * runtime arguments and constants
+
 
 
 #### Execution steps
@@ -54,7 +71,8 @@
     * Asks for approval to the proposed plan, and applies changes to cloud
 4. `terraform destroy`
     * Removes your stack from the Cloud
-
+5. `terraform refresh`
+    * Gets an idea of current infrastructure
 
 ### Terraform Workshop to create GCP Infra
 Continue [here](./terraform): `week_1_basics_n_setup/1_terraform_gcp/terraform`

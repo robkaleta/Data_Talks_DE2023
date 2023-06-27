@@ -14,7 +14,7 @@ provider "google" {
   // credentials = file(var.credentials)  # Use this if you do not want to set env-var GOOGLE_APPLICATION_CREDENTIALS
 }
 
-# Data Lake Bucket
+# Data Lake Bucket - this part creates a bucket on GCP. See docs below
 # Ref: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket
 resource "google_storage_bucket" "data-lake-bucket" {
   name          = "${local.data_lake_bucket}_${var.project}" # Concatenating DL bucket & Project name for unique naming
